@@ -1,28 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для отправки</title>
+</head>
 <?php
-if (!empty($_POST)){
-    if (array_key_exists('test_yes', $_POST))
-    var_dump($test);
-}else {
-    echo '<b><i>You Lose</i></b>';
-}
-//    if (array_key_exists('test_PHP', $_POST)) {
-//        $options = [
-//            'options' => [
-//                'min_range' => 18,
-//                'max_range' => 150
-//            ]
-//        ];
-//
-//        $validate = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT, $options);
-//
-//        if ($validate) {
-//            echo 'Возраст: ' .$validate;
-//        } else {
-//            echo 'Данные введены не верно';
-//        }
-//    }
-//}
-//
-//echo htmlspecialchars($_POST['name']);
-//echo "<pre>";
-//echo $_POST['surname'];
+$url = $_FILES;
+var_dump($_FILES);
+$json = file_get_contents($url);
+$qestions = json_decode($json,true);
+foreach ($qestions as $qestion => $qest){
+    var_dump($qest);
+}?>
+<body>
+    <form action="test.php" method="POST">
+        <fieldset>
+            <legend>Каким символом объявляется переменная?</legend>
+            <label><input type="radio" name="q1"> <?php echo $qest ['qest1'];?></label>
+            <label><input type="radio" name="q1"> <?php echo $qest ['qest2'];?></label>
+            <label><input type="radio" name="q1"> <?php echo $qest ['qest3'];?></label>
+            <label><input type="radio" name="q1"> <?php echo $qest ['qest4'];?></label>
+        </fieldset>
+        <fieldset>
+            <legend>Каким символом объявляется переменная?</legend>
+            <label><input type="radio" name="q2"> <?php echo $qest ['qest1'];?></label>
+            <label><input type="radio" name="q2"> <?php echo $qest ['qest2'];?></label>
+            <label><input type="radio" name="q2"> <?php echo $qest ['qest3'];?></label>
+            <label><input type="radio" name="q2"> <?php echo $qest ['qest4'];?></label>
+        </fieldset>
+        <fieldset>
+            <legend>Какая функция возвращает длинну строки?</legend>
+            <label><input type="radio" name="q3"> <?php echo $qest ['qest1'];?></label>
+            <label><input type="radio" name="q3"> <?php echo $qest ['qest2'];?></label>
+            <label><input type="radio" name="q3"> <?php echo $qest ['qest3'];?></label>
+            <label><input type="radio" name="q3"> <?php echo $qest ['qest4'];?></label>
+        </fieldset>
+        <input type="submit" value="Отправить">
+</body>
+</html>
