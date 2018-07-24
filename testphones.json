@@ -1,0 +1,39 @@
+[
+[{"NameStr":"ЛюкСкайУокер"},{
+  "firstName": "Люк",
+  "lastName": "Скайуокер",
+  "address": "г.Татуин, ул. Оби-Вана Кеноби,113",
+  "phoneNumber": "8(89)219-0214"
+}, {
+  "firstName": "Лея",
+  "lastName": "Органа-Соло",
+  "address": "г.Алдераан, ул. Первого Ордена,003",
+  "phoneNumber": "8(495)099-2159"
+}, {
+  "firstName": "Чубакка(Чуи)",
+  "lastName": "Шушака",
+  "address": "г.Кашиик, ул. Первой Республики,1/3 стр.1",
+  "phoneNumber": "8(499)817-6659"
+}, {
+  "firstName": "Йо́да",
+  "lastName": "Мастер",
+  "address": "Неизвестно",
+  "phoneNumber": "Неизвестно"
+//{
+//  "orderID": 12345,
+//  "shopperName": "Ваня Иванов",
+//  "shopperEmail": "ivanov@example.com",
+//  "contents": [
+//    {
+//      "productID": 34,
+//      "productName": "Супер товар",
+//      "quantity": 1
+//    },
+//    {
+//      "productID": 56,
+//      "productName": "Чудо товар",
+//      "quantity": 3
+//    }
+//  ],
+//  "orderCompleted": true
+}]
