@@ -20,13 +20,13 @@
     }
     $data = json_decode($json, true)or exit('Ошибка декодирования json');
     $description = $data['weather'][0]['description'];
-    $gorod = checkData($data[‘name’]);
-    $temp = $data['main']['temp'];
-    $speed = $data['wind']['speed'];
-    $napr = $data['wind']['deg'];
-    $humidity = $data['main']['humidity'];
-    $pressure = $data['main']['pressure'];
-    $icon = $data['weather'][0]['icon'];
+    $gorod = checkData($data['name']);
+    $temp = checkData($data['main']['temp']);
+    $speed = checkData($data['wind']['speed']);
+    $napr = checkData($data['wind']['deg']);
+    $humidity = checkData($data['main']['humidity']);
+    $pressure = checkData($data['main']['pressure']);
+    $icon = checkData($data['weather'][0]['icon']);
     function checkData($data) { if (empty($data)) {
         return 'не удалось получить данные'; }
 
