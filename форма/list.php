@@ -23,28 +23,29 @@ $json = file_get_contents($url);
 $qestions = json_decode($json,true);
 //var_dump($qestions);
 foreach ($qestions as $qestion => $qest){
-    var_dump($qest);
+
 }
-//var_dump($qestions);
+//var_dump($qest);
+var_dump($qestions);
 ?>
 <body>
     <form action="test.php" method="POST">
         <fieldset>
-            <legend>Каким символом объявляется переменная?</legend>
+            <legend><?php echo $qest ['legend'];?><</legend>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest1'];?></label>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest2'];?></label>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest3'];?></label>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest4'];?></label>
         </fieldset>
         <fieldset>
-            <legend>Каким символом осуществляется конкотинация?</legend>
+            <legend><?php echo $qest ['legend'];?></legend>
             <label><input type="radio" name="q2"> <?php echo $qest ['qest1'];?></label>
             <label><input type="radio" name="q2"> <?php echo $qest ['qest2'];?></label>
             <label><input type="radio" name="q2"> <?php echo $qest ['qest3'];?></label>
             <label><input type="radio" name="q2"> <?php echo $qest ['qest4'];?></label>
         </fieldset>
         <fieldset>
-            <legend>Какая функция возвращает длинну строки?</legend>
+            <legend><?php echo $qest ['legend'];?></legend>
             <label><input type="radio" name="q3"> <?php echo $qest ['qest1'];?></label>
             <label><input type="radio" name="q3"> <?php echo $qest ['qest2'];?></label>
             <label><input type="radio" name="q3"> <?php echo $qest ['qest3'];?></label>
@@ -52,5 +53,4 @@ foreach ($qestions as $qestion => $qest){
         </fieldset>
         <input type="submit" value="Отправить">
 </body>
-</html>
 </html>
