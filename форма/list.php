@@ -31,7 +31,7 @@ var_dump($qestions);
 <body>
     <form action="test.php" method="POST">
         <fieldset>
-            <legend><?php echo $qest ['legend'];?><</legend>
+            <legend><?php echo $qest ['legend'];?></legend>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest1'];?></label>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest2'];?></label>
             <label><input type="radio" name="q1"> <?php echo $qest ['qest3'];?></label>
