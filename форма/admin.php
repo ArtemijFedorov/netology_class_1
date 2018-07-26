@@ -20,49 +20,31 @@ if (!empty($_FILES) || array_key_exists('test', $_FILES)) {
 //    var_dump( '<img src= "test1.json"/>');
     $download = file_get_contents(__DIR__ . '/test1.json');
     echo '<pre>';
-    var_dump($download);
+    //var_dump($download);
 } else {
     echo 'Проблема в том, что тест не загружен';
 }
-$fileDecode = json_decode($download,true);
-//if (!empty(is_array($fileDecode))) {
-//    echo 'Всё ок!';
-//} else {
-//    echo 'Ты что-то сделал не так';
-//}
-var_dump($fileDecode);
-
-foreach ($qestions as $qestion => $qest){
+$qestions = json_decode($download,true);
+if (!empty(is_array($qestions))) {
+    echo 'Всё ок!';
+} else {
+    echo 'Ты что-то сделал не так';
 }
-//var_dump($qest);
-var_dump($qestions);
-
+//var_dump($qestions);
 ?>
 <form action="test.php" method="POST">
-    <fieldset>
-        <legend><?php echo $qest ['legend'];?><</legend>
-        <label><input type="radio" name="q1"> <?php echo $qest ['qest1'];?></label>
-        <label><input type="radio" name="q1"> <?php echo $qest ['qest2'];?></label>
-        <label><input type="radio" name="q1"> <?php echo $qest ['qest3'];?></label>
-        <label><input type="radio" name="q1"> <?php echo $qest ['qest4'];?></label>
-    </fieldset>
+
+  <?php  foreach ($qestions as $qestion => $qest){ ?>
     <fieldset>
         <legend><?php echo $qest ['legend'];?></legend>
-        <label><input type="radio" name="q2"> <?php echo $qest ['qest1'];?></label>
-        <label><input type="radio" name="q2"> <?php echo $qest ['qest2'];?></label>
-        <label><input type="radio" name="q2"> <?php echo $qest ['qest3'];?></label>
-        <label><input type="radio" name="q2"> <?php echo $qest ['qest4'];?></label>
+        <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php $qest ['qest6'];?>"> <?php echo $qest ['qest1'];?></label>
+        <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php $qest ['qest6'];?>"> <?php echo $qest ['qest2'];?></label>
+        <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php $qest ['qest6'];?>"> <?php echo $qest ['qest3'];?></label>
+        <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php $qest ['qest6'];?>"> <?php echo $qest ['qest4'];?></label>
     </fieldset>
-    <fieldset>
-        <legend><?php echo $qest ['legend'];?></legend>
-        <label><input type="radio" name="q3"> <?php echo $qest ['qest1'];?></label>
-        <label><input type="radio" name="q3"> <?php echo $qest ['qest2'];?></label>
-        <label><input type="radio" name="q3"> <?php echo $qest ['qest3'];?></label>
-        <label><input type="radio" name="q3"> <?php echo $qest ['qest4'];?></label>
-    </fieldset>
+  <?php } ?>
     <input type="submit" value="Отправить">
 </form>
 </body>
 </html>
-
 
