@@ -3,17 +3,39 @@
   "qest1": "$",
   "qest2": "@",
   "qest3": "%",
-  "qest4": "Переменная, что это?"
+  "qest4": "Переменная, что это?",
+  "qest5": "q1",
+  "velue": {
+    "answer1": "true",
+    "answer2": "false",
+    "answer3": "false",
+    "answer4": "false"
+  }
+
 }, {
   "legend":"Каким символом осуществляется конкотинация?",
   "qest1":"'.'",
   "qest2":"','",
   "qest3":"';'",
-  "qest4":"Я не разговариваю на клингонском."
+  "qest4":"Я не разговариваю на клингонском.",
+  "qest5": "q2",
+  "velue": {
+    "answer1": "true",
+    "answer2": "false",
+    "answer3": "false",
+    "answer4": "false"
+  }
 },{
   "legend":"Какая функция возвращает длинну строки?",
   "qest1":"array_push",
   "qest2":"str_replace",
   "qest3":"strlen",
-  "qest4":"При помощи магии"
+  "qest4":"При помощи магии",
+  "qest5": "q3",
+  "velue": {
+    "answer1": "false",
+    "answer2": "false",
+    "answer3": "true",
+    "answer4": "false"
+  }
 }]
