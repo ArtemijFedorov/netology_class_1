@@ -34,3 +34,6 @@ if (!empty($_POST)){
 ?>
 <html>
 <body>
+<div><img src="./image.php"></div>
+</body>
+</html>
