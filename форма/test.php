@@ -1,17 +1,37 @@
-<form action="" method="POST">
-    <fieldset>
-        <legend>Сколько граммов в одном килограмме?</legend>
-        <label><input type="radio" name="q1"> 10</label>
-        <label><input type="radio" name="q1"> 100</label>
-        <label><input type="radio" name="q1"> 1000</label>
-        <label><input type="radio" name="q1"> 10000</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для отправки</title>
+</head>
+<?php
+$download = file_get_contents(__DIR__ . '/PHPtest.json');
+$qestions = json_decode($download,true);
+if (!empty(is_array($qestions))) {
+echo 'Всё ок!';
+} else {
+echo 'Ты что-то сделал не так';
+}
+//var_dump($qestions);
+?>
+<body>
+<form action="test.php" method="POST">
+    Имя:
+    <input name="username">
+    <?php  foreach ($qestions as $qestion => $qest){
+    foreach ($qest as $item => $value )
+//        echo '<pre>';
+//        var_dump($value);
+        ?>
+        <fieldset>
+        <legend><?php echo $qest ['legend'];?></legend>
+    <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php echo $value['answer1'];?>"> <?php echo $qest ['qest1'];?></label>
+    <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php echo $value['answer2'];?>"> <?php echo $qest ['qest2'];?></label>
+    <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php echo $value['answer3'];?>"> <?php echo $qest ['qest3'];?></label>
+    <label><input type="radio" name="<?php echo $qest ['qest5'];?>" value="<?php echo $value['answer4'];?>"> <?php echo $qest ['qest4'];?></label>
     </fieldset>
-    <fieldset>
-        <legend>Сколько метров в одном дециметре?</legend>
-        <label><input type="radio" name="q2"> 100</label>
-        <label><input type="radio" name="q2"> 10</label>
-        <label><input type="radio" name="q2"> 0.1</label>
-        <label><input type="radio" name="q2"> 0.01</label>
-    </fieldset>
-    <input type="submit" value="Отправить">
+<?php } ?>
+<input type="submit" value="Отправить">
 </form>
+</body>
+</html>
